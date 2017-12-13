@@ -1,10 +1,9 @@
 import java.awt.geom.*;     // for Point2D.Double
 import java.util.ArrayList; // for ArrayList
-// import gpdraw.*;            // for DrawingTool
+import gpdraw.*;            // for DrawingTool
 
 public class IrregularPolygon{
    private ArrayList <Point2D.Double> myPolygon = new ArrayList <Point2D.Double>();
-   int counter;
    // constructors
    public IrregularPolygon() 
    {
@@ -12,11 +11,6 @@ public class IrregularPolygon{
        myPolygon.add((new Point2D.Double(70.0, 20.0)));
        myPolygon.add((new Point2D.Double(50.0, 50.0)));
        myPolygon.add((new Point2D.Double(0.0, 40.0)));
-       for(Point2D.Double pt : myPolygon)
-       {
-           counter += 1;
-           System.out.println(counter + " X:" + pt.getX() + " Y:" + pt.getY());
-       }
    }
 
    // public methods
@@ -26,6 +20,8 @@ public class IrregularPolygon{
 
    public void draw() 
    {
+       SketchPad myPaper = new SketchPad(500, 500);
+       DrawingTool myPencil = new DrawingTool(myPaper);
    }
 
    public double perimeter() 
@@ -36,6 +32,5 @@ public class IrregularPolygon{
    public double area() 
    {
        return 0.0;
-    
    }
 }
