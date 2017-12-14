@@ -42,7 +42,17 @@ public class IrregularPolygon{
 
    public double area() 
    {
-       return 0.0;
+      double area = 0;
+      for(int i = 1; i < myPolygon.size(); i++)
+       {
+           area += myPolygon.get(i-1).getX() * myPolygon.get(i).getY();
+       }
+      for(int i = 1; i < myPolygon.size(); i++)
+        {
+           area -= myPolygon.get(i).getX() * myPolygon.get(i-1).getY();
+        }
+      area = Math.abs(area/2);
+      return area;
    }
    
    public String getName() 
